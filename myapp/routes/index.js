@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   .then(users => {
     res.render('index', {title: 'Express From Scratch', users: users});
   });
-
+});
 
 router.get('/edit/:id', function(req, res, next) {
   let id = req.params.id
@@ -59,7 +59,5 @@ router.post('/addUser', function(req, res, next) {
   });
 });
 
- 
-});
 
 module.exports = router;
