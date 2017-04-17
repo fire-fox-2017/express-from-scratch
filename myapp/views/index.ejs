@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title><%= title %></title>
-</head>
-<body>
+<% include ./partials/header %>
+
   <h1><%= title %></h1>
 
   <div>
@@ -16,11 +12,13 @@
       <input type="text" name="firstname">
       <label for="lastname">Lastname:</label>
       <input type="text" name="lastname">
+      <label for="phone">Phone:</label>
+      <input type="text" name="phone">
       <button type="submit">Submit</button>
     </form>
     
   </div>
-
+  <br>
   <div>
     <table>
       <thead>
@@ -29,6 +27,7 @@
           <th>User ID</th>
           <th>Firstname</th>
           <th>Lastname</th>
+          <th>Phone</th>
           <th>UpdatedAt</th>
           <th>CreatedAt</th>
         </tr>
@@ -47,8 +46,10 @@
               <td><%- user.id %></td>
               <td><%- user.firstname %></td>
               <td><%- user.lastname %></td>
+              <td><%- user.phone %></td>
               <td><%- user.updatedAt %></td>
               <td><%- user.createdAt %></td>
+              <td><a href="/edit/<%= user.id %>">Edit</a></td>
             </tr>
             <%
             no++;
@@ -59,5 +60,5 @@
     </table>
   </div>
 
-</body>
-</html>
+
+<% include ./partials/footer %>

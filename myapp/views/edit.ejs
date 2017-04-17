@@ -1,0 +1,19 @@
+<% include ./partials/header %>
+
+<div class="container">
+  <h3>Edit User</h3>
+  <form action="/edit/<%= id %>" method="POST">
+    <label for="firstname">firstname:</label>
+    <input type="text" placeholder="firstname" name="firstname" value="<%= user.firstname %>">
+    <label for="lastname">lastname</label>
+    <input type="text" placeholder="lastname" name="lastname" value="<%= user.lastname %>">
+    <label for="phone">phone</label>
+    <input type="text" placeholder="phone" name="phone" value="<%= user.phone %>">
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+
+
+<% include ./partials/footer %>
