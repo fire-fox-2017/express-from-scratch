@@ -12,8 +12,9 @@ router.get('/', function(req, res, next) {
 });
 router.post('/create', function(req, res) {
   models.User.create({
-      name: req.body.name,
-      email: req.body.email
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      phone: req.body.phone
     })
     .then(function(user) {
       res.redirect("/users")
@@ -43,8 +44,9 @@ router.post('/update/:id', function(req, res, next) {
     .then(function(users) {
       if (users) {
         users.updateAttributes({
-            name: req.body.name,
-            email: req.body.email
+          firstname: req.body.firstname,
+          lastname: req.body.lastname,
+          phone: req.body.phone
           })
           .then(function(todo) {
             res.redirect("/users");

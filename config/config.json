@@ -2,7 +2,7 @@
   "development": {
     "username": "edim",
     "password": "edimdendy",
-    "database": "db_todos",
+    "database": "db_user",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "logging": false
