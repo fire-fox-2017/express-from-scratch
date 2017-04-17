@@ -11,15 +11,28 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/delete/:id', function(req, res, next) {
+  let id = req.params.id;
+  db.User.destroy({
+    where: {id: id}
+  })
+  .then(() => {
+    res.redirect('/');
+  })
+  .catch((err) => {
+    res.send(err.message);
+  })
+});
+
 router.get('/edit/:id', function(req, res, next) {
-  let id = req.params.id
+  let id = req.params.id;
   db.User.find({
     where: {
-      id: req.params.id
+      id: id
     }
   })
   .then(user => {
-    res.render('./edit', {user: user, id: id})
+    res.render('./edit', {user: user, id: id});
   })
   .catch(err => {
     console.log(err.message);
