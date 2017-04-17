@@ -3,10 +3,13 @@ var router = express.Router();
 var db = require('../models');
 
 router.get('/', function(req, res, next) {
+  db.User.findAll()
+  .then(users => {
+    res.render('index', {title: 'Express From Scratch', users: users});
+  });
 
 
-
- res.render('index', {title: 'Express From Scratch'})
+ 
 });
 
 module.exports = router;

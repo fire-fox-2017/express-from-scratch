@@ -7,9 +7,41 @@
   <h1><%= title %></h1>
 
   <div>
-    <ul>
-      <li></li>
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>User ID</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>UpdatedAt</th>
+          <th>CreatedAt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (users.length < 1) { %>
+        <tr>
+          <td><p>Tidak ada todo</p></td>
+        <tr>
+        <% } else {
+          let no = 1;
+          users.forEach(user => {
+        %>
+            <tr>
+              <td><%- no %></td>
+              <td><%- user.id %></td>
+              <td><%- user.firstname %></td>
+              <td><%- user.lastname %></td>
+              <td><%- user.updatedAt %></td>
+              <td><%- user.createdAt %></td>
+            </tr>
+            <%
+            no++;
+          });
+          }
+        %>
+      </tbody>
+    </table>
   </div>
 
 </body>
