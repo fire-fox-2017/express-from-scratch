@@ -29,7 +29,7 @@ router.get('/edit/:id', function(req, res, next) {
 router.post('/edit/:id', function(req, res, next) {
   let id = req.params.id;
   db.User.update({
-    firstname: req.body.title,
+    firstname: req.body.firstname,
     lastname: req.body.lastname,
     phone: req.body.phone,
     updatedAt: new Date()
