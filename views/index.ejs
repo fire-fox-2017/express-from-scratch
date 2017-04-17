@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+
+
+
+ 		<form action="/users/create" method="post">
+			First Name: <input type="text" name="firstname"><br>
+			Last Name : <input type="text" name="lastname"><br>
+			Phone     : <input type="text" name="phone"><br>
+	    <input type="submit" value="OK">
+
+		</form>
+ 
+
+    <br><br>
+
+    <table>
+
+    <tbody>
+      <% 
+      users.forEach( u => {
+      %>
+      <tr>
+        <td><%= u.id %></td>
+        <td><%= u.firstname %></td>
+        <td><%= u.lastname %></td>
+        <td><%= u.phone %></td>
+        <td><a href='/users/update/<%= u.id %>'>edit</a> | <a href='/users/delete/<%= u.id %>' onclick="return confirm('Are you sure?')">del</a></td>
+      </tr>
+
+      <% 
+      })
+
+      %>
+
+    
+    </tbody>
+    </table>
+
+
+  </body>
+</html>
