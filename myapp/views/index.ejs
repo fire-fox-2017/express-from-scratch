@@ -1,0 +1,65 @@
+<% include ./partials/header %>
+
+  <h1><%= title %></h1>
+
+  <div>
+    <h3>Sign Up</h3>
+  </div>
+
+  <div>
+    <form action="/addUser" method="POST">
+      <label for="firstname">Firstname:</label>
+      <input type="text" name="firstname">
+      <label for="lastname">Lastname:</label>
+      <input type="text" name="lastname">
+      <label for="phone">Phone:</label>
+      <input type="text" name="phone">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <h3>List of Available Users in Database:</h3>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>User ID</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Phone</th>
+          <th>UpdatedAt</th>
+          <th>CreatedAt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (users.length < 1) { %>
+        <tr>
+          <td><p>Tidak ada todo</p></td>
+        <tr>
+        <% } else {
+          let no = 1;
+          users.forEach(user => {
+        %>
+            <tr>
+              <td><%- no %></td>
+              <td><%- user.id %></td>
+              <td><%- user.firstname %></td>
+              <td><%- user.lastname %></td>
+              <td><%- user.phone %></td>
+              <td><%- user.updatedAt %></td>
+              <td><%- user.createdAt %></td>
+              <td><a href="/edit/<%= user.id %>">Edit</a></td>
+              <td><a href="/delete/<%= user.id %>">Delete</a></td>
+            </tr>
+            <%
+            no++;
+          });
+          }
+        %>
+      </tbody>
+    </table>
+  </div>
+
+
+<% include ./partials/footer %>
