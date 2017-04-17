@@ -7,6 +7,21 @@
   <h1><%= title %></h1>
 
   <div>
+    <h3>Sign Up</h3>
+  </div>
+
+  <div>
+    <form action="/addUser" method="POST">
+      <label for="firstname">Firstname:</label>
+      <input type="text" name="firstname">
+      <label for="lastname">Lastname:</label>
+      <input type="text" name="lastname">
+      <button type="submit">Submit</button>
+    </form>
+    
+  </div>
+
+  <div>
     <table>
       <thead>
         <tr>
