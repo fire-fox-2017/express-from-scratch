@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Create New User</h1>
+      <form action="/create" method="POST">
+        <div>
+          <div>
+            <label for="firstName">First Name</label>
+            <input id="firstName" type="text" name="firstName">
+          </div>
+          <div>
+            <label for="lastName">Last Name</label>
+            <input id="lastName" type="text" name="lastName">
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" type="text" name="phone">
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <h1>List of User</h1>
+      <table>
+          <thead>
+            <tr>
+                <th>No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Edit User</th>
+                <th>Delete User</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%
+            if (users.length < 1) {
+            %>
+            <tr>
+              <td colspan="5"><p class="flow-text">Tidak ada data</p></td>
+            </tr>
+            <%
+            } else {
+              let no = 1;
+              users.forEach(user => {
+            %>
+            <tr>
+              <!-- tampilkan setiap atribut dari instance User -->
+              <td><%- no %></td>
+              <td><%- user.firstName %></td>
+              <td><%- user.lastName %></td>
+              <td><%- user.phone %></td>
+              <td><a href="/edit/<%- user.id%>">Edit</a></td>
+              <td><a href="/delete/<%- user.id%>" onclick="return confirm('Are you sure want to delete this user?')">Delete</a></td>
+            </tr>
+            <%
+                no++;
+              });
+            }
+            %>
+            <!-- batas forEach -->
+          </tbody>
+        </table>
+
+
+    </div>
+  </body>
+</html>
