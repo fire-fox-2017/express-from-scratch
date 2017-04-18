@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+      <div class="container">
+        <div class="row">
+          <h4><%= `Edit User` %></h4>
+            <form action="/users/update/<%= users.id %>" method="POST" class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Input lastname" name="firstname" value="<%= users.firstname %>" id="name" type="text" class="validate">
+                        <label for="name"> Firstame</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Input lastname" name="lastname" value="<%= users.lastname %>" id="name" type="text" class="validate">
+                        <label for="name"> Lastame</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Input Phone" name="phone" value="<%= users.phone %>" id="phone" type="text" class="validate">
+                        <label for="phone">Phone</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <button class="btn" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+      </div>
+    </div>
+
+    <% include ../partials/footer %>
