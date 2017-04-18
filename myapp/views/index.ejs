@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+</head>
+
+<body>
+  <h1><%= title %></h1>
+  <div>
+    <form class="" action="/add" method="POST">
+      <div class="input-field col s6">
+        <input placeholder="First Name" type="text" name="first_name" value="">
+      </div>
+      <div class="input-field col s6">
+        <input placeholder="Last Name" type="text" name="last_name" value="">
+      </div>
+      <div class="input-field col s6">
+        <input placeholder="Phone" type="text" name="phone" value="">
+      </div>
+      <button class="btn waves-effect waves-light" type="submit">Submit
+        </button>
+    </form>
+  </div>
+  <br>
+  <div>
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% list_users.forEach(user=>{ %>
+          <tr>
+            <td>
+              <%- user.id %>
+            </td>
+            <td>
+              <%- user.first_name %>
+            </td>
+            <td>
+              <%-user.last_name %>
+            </td>
+            <td>
+              <%- user.phone %>
+            </td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
