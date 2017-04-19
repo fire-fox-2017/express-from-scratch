@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+</head>
+
+<body>
+  <h1><%= title %></h1>
+<form class="" action="/User/edit/" method="post">
+  <label>first name</label>
+  <input type="text" name="first_name" value=<%= first_name %>><br>
+  <label>last name</label>
+  <input type="text" name="last_name" value=<%= last_name %>><br>
+  <button type="submit" name="id" value=<%= id %>>submit</button>
+</form>
+
+</body>
+</html>
