@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Scratch</title>
+  </head>
+  <body>
+    <a href="/add_users">Add User</a>
+    <table width="40%">
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Phone</th>
+        <th>Action</th>
+      </tr>
+      <% let i=1; tampil.forEach(users => {%>
+        <tr>
+          <td><%= i++ %></td>
+          <td><%= users.firstname %> <%= users.lastname %></td>
+          <td><%= users.phone %></td>
+          <td><a href="/delete/<%=users.id%>">Delete</a> | <a href="/edit/<%=users.id%>">Edit</a></td>
+        </tr>
+        <% }) %>
+    </table>
+  </body>
+</html>
