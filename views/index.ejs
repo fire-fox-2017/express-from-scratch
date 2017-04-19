@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="/user/add" method="get">
+      <button type="submit">add Task</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>firstname</th>
+          <th>lastname</th>
+          <th>phone</th>
+          <th>Created_At</th>
+          <th>Update_data</th>
+          <th>Delete_data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% tampilkan.forEach(list => { %>
+          <tr>
+            <td><%= list.firstname %></td>
+            <td><%= list.lastname %></td>
+            <td><%= list.phone %></td>
+            <td><%= list.createdAt %></td>
+            <td><a href="/user/edit/<%= list.id %>">Edit</a></td>
+            <td><a id="delete" onclick="return confirm('Are you sure?')" href="/user/delete/<%= list.id %>">Delete</a></td>
+            <br>
+          </tr>
+        <% }) %>
+      </tbody>
+
+  </body>
+</html>
