@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Task</title>
+  </head>
+  <body>
+    <form action="/user/edit/<%= user.id %>" method="post">
+      <input type="text" name="firstname" value="<%= user.firstname %>" placeholder="Input your firstname here...">
+      <input type="text" name="lastname" value="<%= user.lastname %>" placeholder="Input your lastname here...">
+      <input type="text" name="phone" value="<%= user.phone %>" placeholder="Input your phone number here...">
+      <button type="submit">update user</button>
+    </form>
+  </body>
+</html>

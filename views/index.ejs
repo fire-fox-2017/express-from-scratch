@@ -27,8 +27,8 @@
             <td><%= list.lastname %></td>
             <td><%= list.phone %></td>
             <td><%= list.createdAt %></td>
-            <td><a href="/edit/<%= list.id %>">Edit</a></td>
-            <td><a id="delete" onclick="return confirm('Are you sure?')" href="/delete/<%= list.id %>">Delete</a></td>
+            <td><a href="/user/edit/<%= list.id %>">Edit</a></td>
+            <td><a id="delete" onclick="return confirm('Are you sure?')" href="/user/delete/<%= list.id %>">Delete</a></td>
             <br>
           </tr>
         <% }) %>
