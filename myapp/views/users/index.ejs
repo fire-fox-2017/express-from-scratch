@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Aplikasi</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+</head>
+
+<body>
+
+    <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar5">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="/users" class="navbar-brand">Daftar User</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="/users/add" class="btn btn-primary">
+              Tambah Todo
+            </a>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% let no=1 ; users.forEach(user=> { %>
+                        <tr>
+                            <th>
+                                <%- no %>
+                            </th>
+                            <td>
+                                <%- user.firstname %>
+                            </td>
+                            <td>
+                                <%- user.lastname %>
+                            </td>
+                            <td>
+                                <%- user.phone%>
+                            </td>
+                            <td>
+                                <a href="/users/edit/<%= user.id%>" class="btn btn-success">
+                            Edit
+                          </a>
+                                <a href="/users//delete/<%= user.id%>" class="btn btn-danger">
+                            Hapus
+                          </a>
+                            </td>
+                        </tr>
+                        <% no ++}) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src='/javascripts/jquery-3.2.1.min.js'></script>
+    <script src='/javascripts/bootstrap.js'></script>
+</body>
+
+</html>
