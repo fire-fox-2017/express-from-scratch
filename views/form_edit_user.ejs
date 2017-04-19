@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>The Best Forever and Ever</h1>
+    <form action="/<%= id %>/edit" method="post">
+      First Name : <input type="text" name="first_name" value="<%= user.firstName %>"></br></br>
+      Last Name : <input type="text" name="last_name" value="<%= user.lastName %>"></br></br>
+      Phone : <input type="text" name="phone" value="<%= user.phone %>"></br></br>
+      <input type="submit" value="EDIT USER">
+    </form>
+  </body>
+</html>

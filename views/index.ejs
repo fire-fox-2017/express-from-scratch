@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>The Best Forever and Ever</h1>
+    <table>
+      <% nomor=1%>
+        <% users.forEach( function(user) { %>
+        <tr>
+          <td><%= nomor %></td>
+          <td><%= user.firstName %></td>
+          <td><%= user.lastName %></td>
+          <td><%= user.phone %></td>
+          <td><a href="<%= user.id %>/edit"><input type="button" value="EDIT"></a> |
+              <a href="<%= user.id %>/delete"><input type="button" value="DELETE"></a></td>
+          <% nomor++ %>
+        </tr>
+        <% }) %>
+    </table></br>
+    <a href='/add'><input type="button" value="ADD USER"></a>
+  </body>
+</html>
